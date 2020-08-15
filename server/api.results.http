@@ -1,20 +1,32 @@
-POST http://localhost:3333/users
-
-###
-
-
-GET https://example.com/comments/1 HTTP/1.1
-
-###
-
-GET https://example.com/topics/1 HTTP/1.1
-
-###
-
-POST https://example.com/comments HTTP/1.1
-content-type: application/json
+POST http://localhost:3333/classes
+Content-Type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+	"name": "Bruno Garcia",
+	"avatar": "https://avatars2.githubusercontent.com/u/15913576?s=460&u=c7650f2f1545d351f583b85974bdc1f6138ee87a&v=4",
+	"whatsapp": "15981574134",
+	"bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus explicabo non neque saepe qui nam distinctio ullam tenetur ratione labore, libero cupiditate dolorum, quam sit recusandae laudantium possimus autem provident.",
+	"subject": "Geografia",
+	"cost": 80,
+	"schedule": [
+		{ "week_day": 1, "from": "8:00", "to": "11:00" },
+		{ "week_day": 2, "from": "9:00", "to": "12:00" },
+		{ "week_day": 3, "from": "10:00", "to": "13:00" },
+		{ "week_day": 4, "from": "11:00", "to": "14:00" }
+	]
 }
+###
+
+GET http://localhost:3333/classes?week_day=2&subject=Geografia&time=11:59
+###
+
+POST http://localhost:3333/connections
+Content-Type: application/json
+
+{
+	"user_id": 1
+}
+###
+
+GET http://localhost:3333/connections
+###
